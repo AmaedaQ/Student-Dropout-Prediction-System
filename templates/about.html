@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Student Dropout Prediction System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    /* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5dc;  /* A light background color */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #003366;  /* Deep blue for header */
+    color: white;
+    padding: 40px 0;  /* Increase padding for a spacious header */
+    text-align: center;  /* Center align content */
+}
+
+.header-title {
+    font-size: 3rem;  /* Increase font size for a more prominent header */
+    font-weight: 600;
+    margin: 0;
+    text-transform: uppercase;  /* Make title more formal */
+}
+
+.section-title {
+    font-size: 2.5rem;  /* Slightly larger for section titles */
+    color: #003366;  /* Matching header color */
+    margin-bottom: 30px;
+    font-weight: 500;  /* Slightly less bold for readability */
+}
+
+/* Section Styling */
+.about-section, .data-preparation-section {
+    padding: 50px;
+    background-color: #fff;
+    margin-bottom: 40px;
+    border-radius: 12px;  /* Slightly larger border radius for modern look */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
+}
+
+.about-section p, .data-preparation-section p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;  /* Slightly lighter color for body text */
+}
+
+/* Footer Styling */
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 1.2rem;  /* Slightly larger footer text */
+}
+
+footer p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/* Accordion Styles */
+.accordion-button {
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color: #003366;
+    color: white;
+    border: 1px solid #003366;
+    padding: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #005bb5;  /* Lighter blue when expanded */
+    color: white;
+}
+
+.accordion-item {
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    border-radius: 10px;  /* Slightly rounded corners */
+}
+
+.accordion-body {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;  /* Increased gap for better spacing */
+    padding: 30px;  /* More padding for a spacious layout */
+    font-size: 1.2rem;
+}
+
+.accordion-body .left,
+.accordion-body .right {
+    flex: 1;  /* Equal space for both columns */
+}
+
+.accordion-body .right {
+    text-align: center;
+}
+
+.accordion-body .right img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-top: 20px;
+    transition: transform 0.3s ease;  /* Add animation effect for images */
+}
+
+.accordion-body .right img:hover {
+    transform: scale(1.05);  /* Subtle zoom effect on hover */
+}
+
+.observation {
+    font-style: italic;
+    margin-top: 15px;
+    color: #003366;  /* Same deep blue for consistency */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .accordion-body {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .accordion-body .left,
+    .accordion-body .right {
+        flex: 0 0 100%;  /* Full width for both sections */
+        padding: 15px;
+    }
+
+    .accordion-body .right img {
+        max-width: 90%;  /* Adjust image width for smaller screens */
+    }
+
+    .accordion-button {
+        font-size: 1.1rem;  /* Slightly smaller button text */
+        padding: 12px;  /* More compact padding */
+    }
+}
+
+/* Button Hover Effect */
+.accordion-button:hover {
+    background-color: #005bb5;  /* Lighten on hover */
+    border-color: #005bb5;
+}
+
+/* Improved Image Handling for High-Resolution Images */
+img.img-fluid {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;  /* Rounded corners on all images */
+    transition: transform 0.3s ease-in-out;  /* Smooth zoom effect */
+}
+
+img.img-fluid:hover {
+    transform: scale(1.05);  /* Slight zoom on hover for better interaction */
+}
+
+</style>
+
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1 class="header-title">About the Project</h1>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <section class="about-section">
+        <div class="container">
+            <h2 class="section-title">Descriptive Analysis</h2>
+            <h4 class="section-subtitle">Dataset Overview</h4>
+            <p>The dataset used for the Student Dropout Prediction System is from Kaggle. It consists of 4,424 observations and 35 features that include demographic and academic information about the students. Most columns are numerical, except for the target column, which represents the dropout status.</p>
+
+            <!-- Cards for Dataset Columns -->
+            <div class="card-deck">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Demographic Information</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Marital Status</li>
+                            <li>Nationality</li>
+                            <li>Gender</li>
+                            <li>Age at Enrollment</li>
+                            <li>Mother's Qualification</li>
+                            <li>Father's Qualification</li>
+                            <li>Mother's Occupation</li>
+                            <li>Father's Occupation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Academic Information</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Previous Qualification</li>
+                            <li>Course</li>
+                            <li>Educational Special Needs</li>
+                            <li>Displaced</li>
+                            <li>International</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Financial Information</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Debtor</li>
+                            <li>Tuition Fees Up to Date</li>
+                            <li>Scholarship Holder</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Course Enrollment Information</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Daytime/Evening Attendance</li>
+                            <li>Curricular Units 1st Sem (Credited)</li>
+                            <li>Curricular Units 1st Sem (Enrolled)</li>
+                            <li>Curricular Units 1st Sem (Evaluations)</li>
+                            <li>Curricular Units 1st Sem (Approved)</li>
+                            <li>Curricular Units 1st Sem (Grade)</li>
+                            <li>Curricular Units 1st Sem (Without Evaluations)</li>
+                            <li>Curricular Units 2nd Sem (Credited)</li>
+                            <li>Curricular Units 2nd Sem (Enrolled)</li>
+                            <li>Curricular Units 2nd Sem (Evaluations)</li>
+                            <li>Curricular Units 2nd Sem (Approved)</li>
+                            <li>Curricular Units 2nd Sem (Grade)</li>
+                            <li>Curricular Units 2nd Sem (Without Evaluations)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Other Factors</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Application Mode</li>
+                            <li>Application Order</li>
+                            <li>Unemployment Rate</li>
+                            <li>Inflation Rate</li>
+                            <li>GDP</li>
+                            <li>Target (Dropout/graduate)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<section class="eda-section">
+    <div class="container">
+        <h2 class="section-title">Exploratory Data Analysis (EDA)</h2>
+        <p>This section explores key patterns in the dataset to uncover factors influencing student dropout rates. We analyze demographic, academic, and financial features to provide insights that will inform model development.</p>
+
+        <div class="accordion" id="edaAccordion">
+
+            <!-- Target Feature Analysis -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTargetFeature">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTargetFeature" aria-expanded="true" aria-controls="collapseTargetFeature">
+                        Target Feature Distribution
+                    </button>
+                </h2>
+                <div id="collapseTargetFeature" class="accordion-collapse collapse show" aria-labelledby="headingTargetFeature" data-bs-parent="#edaAccordion">
+                    <div class="accordion-body d-flex justify-content-between">
+                        <div class="left">
+                            <p>The target column reveals the dropout status of students. We analyze the distribution of students who dropped out, graduated, or are still enrolled.</p>
+                        </div>
+                        <div class="right">
+                            <img src="{{ url_for('static', filename='images/img.png') }}" alt="Target Feature Distribution" class="img-fluid">
+                        </div>
+                    </div>
+                    <p><strong>Observation:</strong> 49% of students are graduates, while 32.1% have dropped out and 17% are still enrolled.</p>
+                </div>
+            </div>
+
+            <!-- Age Distribution -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingAgeDistribution">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAgeDistribution" aria-expanded="false" aria-controls="collapseAgeDistribution">
+                        Age Distribution
+                    </button>
+                </h2>
+                <div id="collapseAgeDistribution" class="accordion-collapse collapse" aria-labelledby="headingAgeDistribution" data-bs-parent="#edaAccordion">
+                    <div class="accordion-body d-flex justify-content-between">
+                        <div class="left">
+                            <p>The age distribution is right-skewed, with most students in their late teens to early twenties. There is a noticeable increase in dropouts among students in their mid-20s to early 30s.</p>
+                        </div>
+                        <div class="right">
+                            <img src="{{ url_for('static', filename='images/img_1.png') }}" alt="Age Distribution" class="img-fluid">
+                        </div>
+                    </div>
+                    <p><strong>Observation:</strong> Dropout rates rise significantly for students in their mid-20s to early 30s.</p>
+                </div>
+            </div>
+
+            <!-- Gender Distribution -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingGenderDistribution">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGenderDistribution" aria-expanded="false" aria-controls="collapseGenderDistribution">
+                        Gender Distribution
+                    </button>
+                </h2>
+                <div id="collapseGenderDistribution" class="accordion-collapse collapse" aria-labelledby="headingGenderDistribution" data-bs-parent="#edaAccordion">
+                    <div class="accordion-body d-flex justify-content-between">
+                        <div class="left">
+                            <p>The gender distribution shows that 64.8% of students are female, but the dropout rate is higher among males (45.1%) compared to females (25.1%).</p>
+                            <ul>
+                                <li><strong>Female Students (64.8%):</strong> Dropout: 701, Graduate: 548, Enrolled: 307</li>
+                                <li><strong>Male Students (35.2%):</strong> Dropout: 720, Graduate: 1661, Enrolled: 487</li>
+                            </ul>
+                        </div>
+                        <div class="right">
+                            <img src="{{ url_for('static', filename='images/img_2.png') }}" alt="Gender Distribution" class="img-fluid">
+                        </div>
+                    </div>
+                    <img src="{{ url_for('static', filename='images/img_3.png') }}" alt="Gender Distribution by Outcome" class="img-fluid">
+                    <p><strong>Observation:</strong> Males have a higher dropout rate despite representing a smaller portion of the student population.</p>
+                </div>
+            </div>
+
+            <!-- Financial Status -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFinancialStatus">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFinancialStatus" aria-expanded="false" aria-controls="collapseFinancialStatus">
+                        Financial Status of Students
+                    </button>
+                </h2>
+                <div id="collapseFinancialStatus" class="accordion-collapse collapse" aria-labelledby="headingFinancialStatus" data-bs-parent="#edaAccordion">
+                    <div class="accordion-body d-flex justify-content-between">
+                        <div class="left">
+                            <p>We examine how financial factors like debt, tuition payment, and scholarship status correlate with dropout rates.</p>
+                        </div>
+                        <div class="right">
+                            <img src="{{ url_for('static', filename='images/img_4.png') }}" alt="Financial Status" class="img-fluid">
+                        </div>
+                    </div>
+                    <p><strong>Observation:</strong> Students with outstanding debt (62%) or unpaid tuition (86.6%) have high dropout rates, while scholarship recipients have a low dropout rate (12.2%).</p>
+                </div>
+            </div>
+
+        </div>
+
+        <p>Our EDA reveals key insights into the factors influencing student dropouts, such as age, gender, and financial status. These findings will guide model development.</p>
+    </div>
+</section>
+<section class="data-preparation-section">
+    <div class="container">
+        <h2 class="section-title">Data Preparation</h2>
+        <p>Data preparation is a crucial step in ensuring model accuracy and efficiency. This phase focuses on feature selection, multicollinearity reduction, and dimensionality reduction for cleaner analysis and predictions.</p>
+
+        <div class="accordion" id="dataPreparationAccordion">
+
+            <!-- Feature Selection -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFeatureSelection">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFeatureSelection" aria-expanded="true" aria-controls="collapseFeatureSelection">
+                        Feature Selection
+                    </button>
+                </h2>
+                <div id="collapseFeatureSelection" class="accordion-collapse collapse show" aria-labelledby="headingFeatureSelection" data-bs-parent="#dataPreparationAccordion">
+                    <div class="accordion-body d-flex flex-column">
+                        <p>The correlation heatmap below shows the relationships between features. High correlation values suggest potential multicollinearity.</p>
+                        <div class="heatmap">
+                            <img src="{{ url_for('static', filename='images/img_5.png') }}" alt="Correlation Heatmap Before Feature Dropping" class="img-fluid">
+                        </div>
+                        <p>To address this, we applied **Principal Component Analysis (PCA)** to the curricular units' data, retaining only the most significant components. We also dropped highly correlated features to streamline the dataset.</p>
+                        <p><strong>Observation:</strong></p>
+                        <ul>
+                            <li>Removed redundant features related to parents' occupation and qualifications.</li>
+                            <li>Reduced curricular units data using PCA to retain only the most relevant variance.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dropped Features -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingDroppedFeatures">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDroppedFeatures" aria-expanded="false" aria-controls="collapseDroppedFeatures">
+                        Features Dropped
+                    </button>
+                </h2>
+                <div id="collapseDroppedFeatures" class="accordion-collapse collapse" aria-labelledby="headingDroppedFeatures" data-bs-parent="#dataPreparationAccordion">
+                    <div class="accordion-body">
+                        <p>Following correlation analysis, the following features were removed to reduce redundancy and multicollinearity:</p>
+                        <ul>
+                            <li>Nationality</li>
+                            <li>Mother's Occupation</li>
+                            <li>Father's Qualification</li>
+                            <li>Curricular Units (1st & 2nd Sem): Enrolled, Credited, Evaluations, Approved, Grade, Without Evaluations</li>
+                        </ul>
+                        <p>These features were dropped to avoid model overfitting and ensure a more interpretable dataset.</p>
+                        <div class="right">
+                            <img src="{{ url_for('static', filename='images/img_6.png') }}" alt="Heatmap After Feature Dropping" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Student Dropout Prediction System | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Evaluation - Student Dropout Prediction System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f9; /* Slightly lighter background for a modern feel */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #003366; /* Keep the deep blue for consistency */
+    color: white;
+    padding: 40px 0;
+}
+
+.header-title {
+    font-size: 2.8rem;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 1px; /* Adds a professional touch */
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 2.4rem;
+    color: #003366;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-transform: uppercase; /* Adds a sleek touch */
+}
+
+/* Sections */
+.about-section, .model-results-section {
+    padding: 40px;
+    background-color: #fff;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Paragraph Styles */
+.about-section p, .model-results-section p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: #555;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/* Accordion Styling */
+.accordion-button {
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color: #003366;
+    color: white;
+    border: 1px solid #003366;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #005bb5; /* Subtle hover effect */
+    color: white;
+}
+
+.accordion-item {
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease;
+}
+
+.accordion-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-body {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    padding: 25px;
+    font-size: 1.1rem;
+}
+
+.accordion-body .left {
+    flex: 1;
+    padding-right: 25px;
+}
+
+.accordion-body .right {
+    flex: 1;
+    padding-left: 25px;
+    text-align: center;
+}
+
+.accordion-body .right img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.observation {
+    font-style: italic;
+    margin-top: 15px;
+    color: #003366;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .accordion-body {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .accordion-body .left,
+    .accordion-body .right {
+        flex: 0 0 100%;
+        padding: 15px;
+    }
+
+    .accordion-button {
+        font-size: 1.1rem;
+        padding: 10px 15px;
+    }
+
+    .accordion-body .right img {
+        max-width: 80%;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1 class="header-title">Model Evaluation Results</h1>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center section-title">Evaluating Machine Learning Models</h2>
+            <p class="lead text-center">We have trained and evaluated different classification models to predict student dropout status. Below are the results of each model's performance.</p>
+        </div>
+    </section>
+
+    <!-- Model Accordion Section -->
+    <section class="model-results-section">
+        <div class="accordion" id="accordionModels">
+
+         <!-- Logistic Regression Model -->
+<div class="accordion-item">
+    <h2 class="accordion-header" id="headingLR">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLR" aria-expanded="true" aria-controls="collapseLR">
+            Logistic Regression
+        </button>
+    </h2>
+    <div id="collapseLR" class="accordion-collapse collapse show" aria-labelledby="headingLR" data-bs-parent="#accordionModels">
+        <div class="accordion-body">
+            <div class="left">
+                <h3>Model Overview</h3>
+                <p>Logistic regression predicts whether a student will drop out, based on binary classification using the provided data.</p>
+
+                <h3>Why Logistic Regression?</h3>
+                <p>Chosen for its simplicity, interpretability, and suitability for binary classification tasks.</p>
+
+                <h3>Performance</h3>
+                <p>Accuracy on the test set: 81.0%. Room for improvement with more complex models.</p>
+            </div>
+            <div class="right">
+                <h3>Accuracy</h3>
+                <p>Training: 83.2%</p>
+                <p>Validation: 84.3%</p>
+                <p>Test: 81.0%</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+            <!-- Decision Tree Model -->
+<div class="accordion-item">
+    <h2 class="accordion-header" id="headingDT">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDT" aria-expanded="true" aria-controls="collapseDT">
+            Decision Tree
+        </button>
+    </h2>
+    <div id="collapseDT" class="accordion-collapse collapse" aria-labelledby="headingDT" data-bs-parent="#accordionModels">
+        <div class="accordion-body">
+            <div class="left">
+                <h3>Model Overview</h3>
+                <p>The decision tree model was trained on the data with the optimal tree depth selected (depth 3) for the best validation accuracy.</p>
+
+                <h3>Why Decision Tree?</h3>
+                <p>Interpretable and effective for classification tasks, capable of handling both numerical and categorical data.</p>
+
+                <h3>Performance</h3>
+                <p>Accuracy on the test set: 83.2%. Deeper trees led to overfitting, with the optimal performance at depth 3.</p>
+            </div>
+            <div class="right">
+                <h3>Accuracy</h3>
+                <p>Test: 83.2%</p>
+
+                <h3>Learning Curve</h3>
+                <p>The optimal tree depth was 3, where the validation accuracy peaked.</p>
+                <p><img src="{{ url_for('static', filename='images/img_11.png') }}" alt="Learning Curve" class="img-fluid" /></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+           <!-- Support Vector Machine Model -->
+<div class="accordion-item">
+    <h2 class="accordion-header" id="headingSVM">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSVM" aria-expanded="true" aria-controls="collapseSVM">
+            Support Vector Machine (SVM)
+        </button>
+    </h2>
+    <div id="collapseSVM" class="accordion-collapse collapse" aria-labelledby="headingSVM" data-bs-parent="#accordionModels">
+        <div class="accordion-body">
+            <div class="left">
+                <h3>Model Overview</h3>
+                <p>The SVM model was trained with four kernels: linear, polynomial, RBF, and sigmoid. The linear kernel performed best and was selected for final training.</p>
+
+                <h3>Why SVM?</h3>
+                <p>Effective for classification tasks, SVMs handle non-linear data and excel in high-dimensional spaces, making them well-suited for dropout prediction.</p>
+
+                <h3>Performance</h3>
+                <p>The linear kernel achieved 80.9% accuracy on the test set, outperforming the other kernels.</p>
+            </div>
+            <div class="right">
+                <h3>Accuracy</h3>
+                <p>Test: 80.9%</p>
+
+                <h3>Best Kernel</h3>
+                <p>Linear Kernel</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- Random Forest Model -->
+<div class="accordion-item">
+    <h2 class="accordion-header" id="headingRF">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRF" aria-expanded="true" aria-controls="collapseRF">
+            Random Forest
+        </button>
+    </h2>
+    <div id="collapseRF" class="accordion-collapse collapse" aria-labelledby="headingRF" data-bs-parent="#accordionModels">
+        <div class="accordion-body">
+            <div class="left">
+                <h3>Model Overview</h3>
+                <p>We trained the Random Forest model in two stages: first with default parameters, then with hyperparameter tuning using Grid Search for optimal performance.</p>
+
+                <h3>Why Random Forest?</h3>
+                <p>Random Forest is an ensemble method that improves prediction accuracy by combining multiple decision trees. It reduces overfitting and captures complex data patterns.</p>
+
+                <h3>Performance Insights</h3>
+                <p>With default parameters, the model achieved 99.9% accuracy on training data, 85.5% on validation. After tuning, the validation accuracy improved slightly to 85.0%, but test set accuracy was 82.8%, indicating overfitting.</p>
+            </div>
+            <div class="right">
+                <h3>Accuracy</h3>
+                <p><strong>Default Parameters:</strong><br>Training: 99.9%<br>Validation: 85.5%</p>
+
+                <p><strong>Best Parameters (Grid Search):</strong><br>Training: 86.5%<br>Validation: 85.0%<br>Test: 82.8%</p>
+
+                <h3>Best Parameters</h3>
+                <p>max_depth: 3<br>max_features: sqrt<br>max_leaf_nodes: 9<br>n_estimators: 100</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+          <!-- K-Nearest Neighbors Model -->
+<div class="accordion-item">
+    <h2 class="accordion-header" id="headingKNN">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseKNN" aria-expanded="true" aria-controls="collapseKNN">
+            K-Nearest Neighbors
+        </button>
+    </h2>
+    <div id="collapseKNN" class="accordion-collapse collapse" aria-labelledby="headingKNN" data-bs-parent="#accordionModels">
+        <div class="accordion-body">
+            <div class="left">
+                <h3>Model Overview</h3>
+                <p>The KNN model was trained using Grid Search for optimal parameters and the elbow method to determine the best K value.</p>
+
+                <h3>Why K-Nearest Neighbors?</h3>
+                <p>KNN is a simple, effective classification algorithm that predicts based on the majority class of nearest neighbors. It works well for complex, non-linear data distributions.</p>
+
+                <h3>Performance Insights</h3>
+                <p>After applying Grid Search, the model achieved 83.9% accuracy on training data and 82.3% on validation. The elbow method suggested an optimal K value of 11, balancing accuracy between training and validation sets.</p>
+            </div>
+            <div class="right">
+                <h3>Accuracy</h3>
+                <p><strong>Best Parameters (Grid Search):</strong><br>Training: 83.9%<br>Validation: 82.3%</p>
+
+                <p><strong>Test Set:</strong> 79.5%</p>
+
+                <h3>Best Parameters</h3>
+                <p>n_neighbors: 13</p>
+                <p>Optimal K Value</p>
+                <p>K = 11 (highest validation accuracy of 82.3%)</p>
+
+                <h3>Learning Curve</h3>
+                <img src="{{ url_for('static', filename='images/img_10.png') }}" alt="Learning curve for KNN model" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
+<<!-- Model Performance and Comparison -->
+<div class="accordion-item">
+    <h2 class="accordion-header" id="headingPerformance">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePerformance" aria-expanded="true" aria-controls="collapsePerformance">
+            Model Performance Comparison
+        </button>
+    </h2>
+    <div id="collapsePerformance" class="accordion-collapse collapse" aria-labelledby="headingPerformance" data-bs-parent="#accordionModels">
+        <div class="accordion-body" style="display: flex; flex-direction: column; gap: 30px;">
+
+            <!-- Top Section (Best Model and Accuracy Comparison) -->
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px;">
+                <!-- Left Section (Best Model: Decision Tree with Accuracy and Confusion Matrix) -->
+                <div style="flex: 1; text-align: left;">
+                    <h3 style="font-size: 1.5rem; font-weight: 600;">Best Model: Decision Tree</h3>
+                    <p style="font-size: 1rem;"><strong>Accuracy: 83.2%</strong></p>
+                    <h4 style="font-size: 1.25rem; margin-top: 10px;">Confusion Matrix</h4>
+                    <img src="{{ url_for('static', filename='images/img_7.png') }}" alt="Decision Tree Confusion Matrix" class="img-fluid" style="width: 100%; max-width: 500px; margin-bottom: 15px;">
+                    <p style="font-size: 1rem;">The Decision Tree model achieves an accuracy of 83.2%, performing well at distinguishing between dropout and non-dropout classes.</p>
+                </div>
+
+                <!-- Right Section (Accuracy Comparison Plot) -->
+                <div style="flex: 1.5; text-align: right;">
+                    <h3 style="font-size: 1.5rem; font-weight: 600;">Model Accuracy Comparison</h3>
+                    <p style="font-size: 1rem;">The following plot visualizes the accuracy comparison across all models:</p>
+                    <img src="{{ url_for('static', filename='images/img_8.png') }}" alt="Model Accuracy Comparison" class="img-fluid" style="width: 100%; max-width: 650px; margin-top: 15px;">
+                    <p>
+
+                </div>
+            </div>
+
+            <!-- Horizontal Line Between the Top and Bottom Sections -->
+            <hr style="border: 1px solid #ddd; margin: 30px 0;">
+
+            <!-- Bottom Section (Confusion Matrices of Other Models) -->
+            <div>
+                <h3 style="font-size: 1.5rem; font-weight: 600;">Confusion Matrices for Other Models</h3>
+                <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
+                    <!-- Combined Confusion Matrix Image for Other Models -->
+                    <div style="flex: 1; text-align: center;">
+                        <h4 style="font-size: 1.2rem; font-weight: 500;">Combined Confusion Matrix</h4>
+                        <img src="{{ url_for('static', filename='images/img_9.png') }}" alt="Combined Confusion Matrix for Other Models" class="img-fluid" style="width: 100%; max-width: 1300px; margin-bottom: 15px;">
+                        <p style="font-size: 1rem;">This combined confusion matrix represents the performance of the Logistic Regression, Random Forest, SVM, and KNN models, showing their accuracy and classification behavior in one unified image.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Student Dropout Prediction System</p>
+    </footer>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

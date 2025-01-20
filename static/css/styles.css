@@ -1,0 +1,372 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5dc; /* Beige color for background */
+    color: #333333; /* Dark gray text for readability */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #003366; /* Dark Blue for header */
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between title and links */
+    align-items: center; /* Vertically center the items */
+    padding: 20px 40px; /* Add padding around header */
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #ffffff;
+    margin: 0;
+    flex: 1; /* Ensures the title takes up available space on the left */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Horizontal layout for links */
+    align-items: center; /* Vertically center links */
+}
+
+nav ul li {
+    margin-left: 30px; /* Space between links */
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effects */
+nav a:hover {
+    background-color: #cce5ff; /* Light Blue for hover effect */
+    color: #003366; /* Dark Blue text */
+    transform: translateY(-2px);
+}
+
+nav a:active {
+    background-color: #00509e; /* Darker blue for active link */
+    color: #ffffff;
+}
+
+/* Active link styling */
+nav a.active {
+    background-color: #00509e;
+    color: #ffffff;
+}
+
+.container {
+    padding: 0 15px;
+}
+
+/* Main Content */
+.hero-section {
+    background-color: #003366; /* Dark blue for hero section */
+    color: #ffffff;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.hero-section h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-top: 20px;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #f5f5dc; /* Beige color for buttons */
+    color: #003366; /* Dark blue text for buttons */
+    border: 2px solid #003366;
+    font-weight: 500;
+    border-radius: 20px;
+    padding: 10px 25px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #cce5ff; /* Light blue for button hover */
+    color: #003366;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+    background-color: #003366;
+    color: #ffffff;
+    padding: 40px 0;
+    text-align: center;
+    margin-top: 60px;
+}
+
+footer p {
+    font-size: 1.1rem;
+}
+/* Hero Section Styles */
+.hero-section {
+    background-color: #003366; /* Dark Blue for hero section */
+    color: #ffffff;
+    padding: 150px 20px; /* Increased padding for more emphasis */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-title {
+    font-size: 3.5rem; /* Slightly reduced for better balance */
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: fadeIn 1s ease-out;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.4rem; /* Smaller subtitle for better proportion */
+    font-weight: 300;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    animation: fadeIn 1.5s ease-out;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Refined Button Styles */
+.hero-btn {
+    background-color: #f5f5dc; /* Beige for the button */
+    color: #003366; /* Dark blue text */
+    padding: 12px 40px; /* Adjusted padding to make it more compact */
+    font-size: 1.2rem; /* Smaller, more balanced font size */
+    text-decoration: none;
+    border-radius: 30px; /* Rounded button for a more modern look */
+    display: inline-block;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.hero-btn:hover {
+    background-color: #cce5ff; /* Light Blue for hover effect */
+    color: #003366;
+    transform: translateY(-4px); /* Slight lift effect */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15); /* Soft shadow on hover */
+}
+
+.hero-btn:active {
+    background-color: #00509e; /* Darker blue when clicked */
+    color: #ffffff;
+    transform: translateY(0); /* Reset lift effect */
+}
+
+/* Animation for fade-in */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Adjusting layout for small screens */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem; /* Slightly smaller for mobile */
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem; /* Adjust font size for mobile */
+    }
+
+    .hero-btn {
+        font-size: 1.1rem; /* Smaller button on mobile */
+        padding: 10px 35px; /* Adjust button padding for mobile */
+    }
+}/* Why It Matters Section Styles */
+.why-it-matters {
+    background-color: #f0f8ff; /* Light blue background to contrast with hero section */
+    color: #003366; /* Dark blue text color */
+    padding: 60px 20px; /* Padding for spacing */
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #003366; /* Dark blue color for the title */
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.section-text {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    font-weight: 400;
+    color: #555555; /* Lighter text for body */
+    max-width: 900px;
+    margin: 0 auto; /* Center-align the text */
+}
+
+.why-it-matters .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Responsive Design for Why It Matters */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem; /* Slightly smaller title for mobile */
+    }
+
+    .section-text {
+        font-size: 1.1rem; /* Adjust text size for smaller screens */
+    }
+}
+/* Classifier Carousel Section */
+.classifier-carousel {
+    background-color: #f8f8f8; /* Light background to give focus to cards */
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #003366; /* Dark blue for title */
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 2px;
+}
+
+.classifier-card {
+    border-radius: 12px; /* Soft rounded corners */
+    background-color: #f5f5dc; /* Beige background for contrast */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    transition: all 0.3s ease-in-out;
+    padding: 20px;
+    height: 300px; /* Card height to maintain consistency */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.classifier-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* More prominent hover effect */
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.classifier-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #003366; /* Dark blue for the title */
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.classifier-description {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #333333;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.btn-primary {
+    background-color: #003366; /* Dark blue */
+    color: #ffffff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    font-weight: 500;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #f5f5dc; /* Beige on hover */
+    color: #003366;
+    transform: translateY(-2px);
+}
+
+/* Carousel Controls */
+.carousel-control-prev, .carousel-control-next {
+    background-color: rgba(0, 51, 102, 0.5); /* Slight transparent dark blue */
+    color: #ffffff;
+    border-radius: 50%;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .classifier-card {
+        height: 350px; /* Reduced height for mobile screens */
+    }
+
+    .classifier-title {
+        font-size: 1.4rem;
+    }
+
+    .classifier-description {
+        font-size: 1rem;
+    }
+
+    .btn-primary {
+        padding: 10px 20px;
+    }
+}
+/* Footer Section */
+.footer {
+    background-color: #003366; /* Dark blue for footer */
+    color: #ffffff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    margin: 0 10px;
+}
+
+.footer a:hover {
+    color: #f5f5dc; /* Beige color on hover */
+}
+
+.footer p {
+    font-size: 1.1rem;
+    margin: 0;
+}
