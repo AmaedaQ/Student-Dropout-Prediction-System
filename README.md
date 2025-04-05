@@ -1,5 +1,3 @@
-
-```markdown
 # Student Dropout Prediction System
 
 ## Overview
@@ -47,7 +45,6 @@ The dataset consists of 4,424 students and 35 features. Key features include:
    ```bash
    git clone https://github.com/AmaedaQ/Student-Dropout-Prediction.git
    cd Student-Dropout-Prediction
-   ```
 
 2. Install dependencies:
    ```bash
